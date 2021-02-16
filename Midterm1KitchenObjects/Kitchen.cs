@@ -28,47 +28,56 @@ namespace Midterm1KitchenObjects
 
         public void DisplayRecipes()
         {
+            int i = 1;
             foreach (Recipe r in Recipes)
             {
-                Console.WriteLine($"{r.Name}");
+                Console.WriteLine($"{i}) {r.Name}");
             }
         }
 
         public Recipe SelectRecipe()
         {
-            Console.WriteLine("Here are the available recipes: ");
+            Console.WriteLine("\nHere are the available recipes: ");
             DisplayRecipes();
-            Console.Write("Which recipe would you like to pick? ");
-            int selectedRecipeIndex = int.Parse(Console.ReadLine());
+            Console.Write("\nWhich recipe would you like to prepare? ");
+            int selectedRecipe = int.Parse(Console.ReadLine());
+            int selectedRecipeIndex = selectedRecipe - 1;
 
             Recipes[selectedRecipeIndex].DisplayInfo();
             return Recipes[selectedRecipeIndex];
 
         }
 
-        public void PrepareRecipe(Recipe selectedRecipe)
+        public bool PrepareRecipe(Recipe selectedRecipe)
         {
+            bool haveAllIngredients = true;
 
             foreach(string i in selectedRecipe.Ingredients)
             {
                 int result;
                 Pantry.TryGetValue(i, out result);
 
-                if (result > 0)
+                if (result == 0)
                 {
-                    Console.WriteLine($"It looks like we have {i} in our pantry.");
+                    haveAllIngredients = false;
                 }
             }
-
+            
+            if (haveAllIngredients == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public void DisplayPantry()
         {
             foreach(KeyValuePair<string, int> kvp in Pantry)
             {
-                
-              
-                Console.WriteLine($"Food item: {kvp.Key}\nQuantity: {kvp.Value}");
+                Console.WriteLine($"Food: {kvp.Key}\nQuantity: {kvp.Value}");
             }
         }
 

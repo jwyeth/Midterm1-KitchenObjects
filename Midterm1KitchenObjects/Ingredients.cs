@@ -32,33 +32,12 @@ namespace Midterm1KitchenObjects
             Foods.Add(food1);
             Foods.Add(food2);
             Foods.Add(food3);
-
-
-            //Food = new List<Ingredients>;
-
-
-            //List<Ingredients> Food = new List<Ingredients>();
-
-            //Ingredients food1 = new Ingredients("Tomato", "Fruit", 90, 1.00);
-            //Ingredients food2 = new Ingredients("Beef", "Meat", 180, 2.00);
-            //Ingredients food3 = new Ingredients("Cheese", "Dairy", 90, 1.00);
-            //Food.Add(food1);
-            //Food.Add(food2);
-            //Food.Add(food3);
-
         }
 
         public void DisplayInfo()
         {
             Console.WriteLine($"{Name}, {FoodGroup}, {Calories}, {Cost}");
         }
-
-
-        //public Ingredients()
-        //{
-
-        //}
-
     }
 
 }
