@@ -44,11 +44,5 @@ namespace Midterm1KitchenObjects
 
         }
 
-
-        public void CalculateTotalCalories()
-        {
-
-        }
-
     }
 }
