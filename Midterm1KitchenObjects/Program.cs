@@ -8,12 +8,11 @@ namespace Midterm1KitchenObjects
         {
             Console.WriteLine("Welcome to the kitchen!");
             Kitchen k = new Kitchen();
-            while (true)
+            bool running = true;
+            while (running == true)
             {
-
-                
                 MainMenu();
-                Console.Write("\nPlease enter a number coresponding to the action you'd like to perform: ");
+                Console.Write("\nPlease enter the number coresponding to the action you'd like to perform: ");
                 int menuSelection = int.Parse(Console.ReadLine());
 
                 switch (menuSelection)
@@ -24,26 +23,25 @@ namespace Midterm1KitchenObjects
 
                     case 2:
                         k.DisplayRecipes();
-                        
                         break;
 
                     case 3:
                         Recipe selectedRecipe = k.SelectRecipe();
-                        k.DisplayPantry();
+                        //k.DisplayPantry();
                         selectedRecipe.DisplayInfo();
                         if (k.PrepareRecipe(selectedRecipe) == true)
                         {
-                            Console.WriteLine($"It looks like we have all of the ingredients to prepare {selectedRecipe.Name}");
+                            Console.WriteLine($"\nWe were able to successfully prepare {selectedRecipe.Name}. Enjoy!");
                         }
                         else
                         {
-                            Console.WriteLine($"It doesn't look like we have all of the ingredients to prepare {selectedRecipe.Name}");
+                            Console.WriteLine($"\nIt doesn't look like we have all of the ingredients to prepare {selectedRecipe.Name}");
                         }
                         break;
-                    //case 4:
-                        //Recipe selectedRecipe = k.SelectRecipe();
-                        //selectedRecipe.CalculateTotalCalories();
-                        //break;
+
+                    case 4:
+                        running = false;
+                        break;
                 }
             }
                
@@ -55,6 +53,8 @@ namespace Midterm1KitchenObjects
             Console.WriteLine("1) View Foods in Pantry");
             Console.WriteLine("2) View Recipes");
             Console.WriteLine("3) Prepare Recipe");
+            Console.WriteLine("4) Quit");
+
         }
     }
 }

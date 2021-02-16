@@ -15,25 +15,38 @@ namespace Midterm1KitchenObjects
         
             List<Ingredients> Foods = new List<Ingredients>();
 
-            Ingredients tomato = new Ingredients("Tomato", "Fruit", 90, 1.00);
-            Ingredients beef = new Ingredients("Beef", "Meat", 180, 2.00);
-            Ingredients cheese = new Ingredients("Cheese", "Dairy", 90, 1.00);
-            Foods.Add(tomato);
-            Foods.Add(beef);
-            Foods.Add(cheese);
+            Ingredients Tomato = new Ingredients("Tomato", "Fruit", 90, 1.00);
+            Ingredients Beef = new Ingredients("Beef", "Meat", 180, 2.00);
+            Ingredients Cheese = new Ingredients("Cheese", "Dairy", 90, 1.00);
+            Ingredients Tortilla = new Ingredients("Ingredients", "Grains", 80, 1.00);
+            Foods.Add(Tomato);
+            Foods.Add(Beef);
+            Foods.Add(Cheese);
+            Foods.Add(Tortilla);
+
+            Ingredients SpaghettiSauce = new Ingredients("SpaghettiSauce", "Soup?", 90, 1.00);
+            Ingredients Spaghetti = new Ingredients("Spaghetti", "Pasta", 90, 1.00);
+            Foods.Add(SpaghettiSauce);
+            Foods.Add(Spaghetti);
 
             Pantry = new Dictionary<string, int>();
             Pantry.Add("Tomato", 1);
             Pantry.Add("Beef", 1);
             Pantry.Add("Cheese", 1);
+            Pantry.Add("Tortilla", 1);
+            Pantry.Add("SpaghettiSauce", 1);
+            Pantry.Add("Spaghetti", 1);
+
 
             Recipes = new List<Recipe>();
             List<string> Steps = new List<string>();
 
             
 
-            Recipe recipe1 = new Recipe("Tacos", 0, 2.00, new List<Ingredients>() {  tomato, beef, cheese }, new List<string>() { "Brown beef", "Drain grease" });
+            Recipe recipe1 = new Recipe("Tacos", 0, 0.00, new List<Ingredients>() {  Tomato, Beef, Cheese, Tortilla }, new List<string>() { "Brown beef", "Drain grease", "Mix in seasoning", "Serve" });
+            Recipe recipe2 = new Recipe("Spaghetti", 0, 0.00, new List<Ingredients>() { Spaghetti, SpaghettiSauce, Beef }, new List<string>() { "Cook noodles", "Brown beef", "Drain grease", "Mix beef and sauce", "Serve" });
             Recipes.Add(recipe1);
+            Recipes.Add(recipe2);
             CalculateTotalCalories();
             CalculateTotalCost();
 
@@ -46,6 +59,7 @@ namespace Midterm1KitchenObjects
             foreach (Recipe r in Recipes)
             {
                 Console.WriteLine($"{i}) {r.Name}");
+                i++;
             }
         }
 
@@ -57,7 +71,7 @@ namespace Midterm1KitchenObjects
             int selectedRecipe = int.Parse(Console.ReadLine());
             int selectedRecipeIndex = selectedRecipe - 1;
 
-            Recipes[selectedRecipeIndex].DisplayInfo();
+            //Recipes[selectedRecipeIndex].DisplayInfo();
             return Recipes[selectedRecipeIndex];
 
         }
@@ -70,8 +84,7 @@ namespace Midterm1KitchenObjects
             {
                 int result;
                 Pantry.TryGetValue(i.Name.ToString(), out result);
-                Console.WriteLine(result);
-                Console.WriteLine(i.Name);
+
 
                 if (result == 0)
                 {

@@ -25,19 +25,23 @@ namespace Midterm1KitchenObjects
         public Recipe()
         {
 
-            foreach (Ingredients i in Ingredients)
-            {
-                Console.WriteLine($"{i.Calories}");
-                TotalCalories += i.Calories;
-                Console.WriteLine(TotalCalories);
-            }
+
 
 
         }
         public virtual void DisplayInfo()
         {
 
-            Console.WriteLine($"\nRecipe name: {Name}, \nTotal calories: {TotalCalories}, \nTotal cost: {TotalCost}, \nSteps:");
+            Console.WriteLine($"\nRecipe name: {Name}, \nTotal calories: {TotalCalories}, \nTotal cost: ${TotalCost}, \nSteps:");
+            int i = 1;
+            foreach (string s in Steps)
+            {
+                Console.Write($"\t{i}) {s}");
+                Console.WriteLine();
+                i++;
+
+            }
+
         }
 
 
