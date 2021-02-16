@@ -9,10 +9,11 @@ namespace Midterm1KitchenObjects
         public string Name { get; set;}
         public int TotalCalories { get; set; }
         public double TotalCost { get; set; }
-        public List<string> Ingredients { get; set; }
+        public List<Ingredients> Ingredients { get; set; }
         public List<string> Steps { get; set; }
 
-        public Recipe(string Name, int TotalCalories, double TotalCost, List<string> Ingredients, List<string> Steps)
+        public Recipe(string Name, int TotalCalories, double TotalCost, List<Ingredients> Ingredients, List<string> Steps)
+
         {
             this.Name = Name;
             this.TotalCalories = TotalCalories;
@@ -24,22 +25,26 @@ namespace Midterm1KitchenObjects
         public Recipe()
         {
 
+            foreach (Ingredients i in Ingredients)
+            {
+                Console.WriteLine($"{i.Calories}");
+                TotalCalories += i.Calories;
+                Console.WriteLine(TotalCalories);
+            }
 
-            
 
         }
         public virtual void DisplayInfo()
         {
-            Console.WriteLine($"{Name}, {TotalCalories}, {TotalCost}");
+
+            Console.WriteLine($"\nRecipe name: {Name}, \nTotal calories: {TotalCalories}, \nTotal cost: {TotalCost}, \nSteps:");
         }
 
-        public int CalculateTotalCalories(Recipe selectedRecipe, Ingredients List<Ingredients> )
+
+        public void CalculateTotalCalories()
         {
-            foreach (string i in selectedRecipe.Ingredients){
-                Foods.
-            }
 
-            
         }
+
     }
 }

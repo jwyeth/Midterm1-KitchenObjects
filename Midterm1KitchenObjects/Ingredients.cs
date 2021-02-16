@@ -22,19 +22,11 @@ namespace Midterm1KitchenObjects
         public Ingredients()
         {
 
-            List<Ingredients> Foods = new List<Ingredients>();
-
-            Ingredients food1 = new Ingredients("Tomato", "Fruit", 90, 1.00);
-            Ingredients food2 = new Ingredients("Beef", "Meat", 180, 2.00);
-            Ingredients food3 = new Ingredients("Cheese", "Dairy", 90, 1.00);
-            Foods.Add(food1);
-            Foods.Add(food2);
-            Foods.Add(food3);
         }
 
         public void DisplayInfo()
         {
-            Console.WriteLine($"{Name}, {FoodGroup}, {Calories}, {Cost}");
+            Console.WriteLine($"\nIngredient name: {Name}, Food group: {FoodGroup}, Calories: {Calories}, Cost: {Cost}");
         }
     }
 

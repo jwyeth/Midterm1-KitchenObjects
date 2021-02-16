@@ -6,23 +6,37 @@ namespace Midterm1KitchenObjects
 {
     public class Kitchen
     {
-        //Dictionary<Ingredients, int> Pantry = new Dictionary<Ingredients, int>();
         public Dictionary<string, int> Pantry { get; set; }
         public List<Recipe> Recipes { get; set; }
 
 
         public Kitchen()
         {
+        
+            List<Ingredients> Foods = new List<Ingredients>();
+
+            Ingredients tomato = new Ingredients("Tomato", "Fruit", 90, 1.00);
+            Ingredients beef = new Ingredients("Beef", "Meat", 180, 2.00);
+            Ingredients cheese = new Ingredients("Cheese", "Dairy", 90, 1.00);
+            Foods.Add(tomato);
+            Foods.Add(beef);
+            Foods.Add(cheese);
+
             Pantry = new Dictionary<string, int>();
+            Pantry.Add("Tomato", 1);
             Pantry.Add("Beef", 1);
             Pantry.Add("Cheese", 1);
-            Pantry.Add("Tomato", 0);
 
             Recipes = new List<Recipe>();
             List<string> Steps = new List<string>();
 
-            Recipe recipe1 = new Recipe("Tacos", 600, 2.00, new List<string>() { "Beef", "Cheese", "Tomato" }, new List<string>() { "Brown beef", "Drain grease" });
+            
+
+            Recipe recipe1 = new Recipe("Tacos", 0, 2.00, new List<Ingredients>() {  tomato, beef, cheese }, new List<string>() { "Brown beef", "Drain grease" });
             Recipes.Add(recipe1);
+            CalculateTotalCalories();
+            CalculateTotalCost();
+
 
         }
 
@@ -52,10 +66,12 @@ namespace Midterm1KitchenObjects
         {
             bool haveAllIngredients = true;
 
-            foreach(string i in selectedRecipe.Ingredients)
+            foreach(Ingredients i in selectedRecipe.Ingredients)
             {
                 int result;
-                Pantry.TryGetValue(i, out result);
+                Pantry.TryGetValue(i.Name.ToString(), out result);
+                Console.WriteLine(result);
+                Console.WriteLine(i.Name);
 
                 if (result == 0)
                 {
@@ -65,6 +81,10 @@ namespace Midterm1KitchenObjects
             
             if (haveAllIngredients == true)
             {
+                foreach(Ingredients i in selectedRecipe.Ingredients)
+                {
+                    Pantry[i.Name.ToString()] -= 1;
+                }
                 return true;
             }
             else
@@ -80,6 +100,35 @@ namespace Midterm1KitchenObjects
                 Console.WriteLine($"Food: {kvp.Key}\nQuantity: {kvp.Value}");
             }
         }
+
+        public void CalculateTotalCalories()
+        {
+            int totalCalories = 0;
+            foreach(Recipe r in Recipes)
+                {
+                foreach (Ingredients i in r.Ingredients)
+                {
+                    totalCalories += i.Calories;
+                }
+            r.TotalCalories = totalCalories;
+            }
+        }
+
+        public void CalculateTotalCost()
+        {
+            double totalCost = 0.00;
+            foreach(Recipe r in Recipes)
+            {
+                foreach(Ingredients i in r.Ingredients)
+                {
+                    totalCost += i.Cost;
+                }
+                r.TotalCost = totalCost;
+            }
+        }
+
+
+
 
     }
 

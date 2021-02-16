@@ -24,11 +24,13 @@ namespace Midterm1KitchenObjects
 
                     case 2:
                         k.DisplayRecipes();
+                        
                         break;
 
                     case 3:
                         Recipe selectedRecipe = k.SelectRecipe();
                         k.DisplayPantry();
+                        selectedRecipe.DisplayInfo();
                         if (k.PrepareRecipe(selectedRecipe) == true)
                         {
                             Console.WriteLine($"It looks like we have all of the ingredients to prepare {selectedRecipe.Name}");
@@ -38,28 +40,11 @@ namespace Midterm1KitchenObjects
                             Console.WriteLine($"It doesn't look like we have all of the ingredients to prepare {selectedRecipe.Name}");
                         }
                         break;
+                    //case 4:
+                        //Recipe selectedRecipe = k.SelectRecipe();
+                        //selectedRecipe.CalculateTotalCalories();
+                        //break;
                 }
-
-
-
-
-
-
-                //Recipe selectedRecipe = k.SelectRecipe();
-                //k.DisplayPantry();
-                //if (k.PrepareRecipe(selectedRecipe) == true)
-                //{
-                //    Console.WriteLine($"It looks like we have all of the ingredients to prepare {selectedRecipe.Name}");
-                //}
-                //else
-                //{
-                //    Console.WriteLine($"It doesn't look like we have all of the ingredients to prepare {selectedRecipe.Name}");
-                //}
-
-
-
-
-
             }
                
         }
