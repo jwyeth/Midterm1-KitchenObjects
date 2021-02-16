@@ -1,0 +1,13 @@
+C:\Users\jwyeth\source\repos\Midterm1KitchenObjects\Midterm1KitchenObjects\bin\Debug\netcoreapp3.1\Midterm1KitchenObjects.exe
+C:\Users\jwyeth\source\repos\Midterm1KitchenObjects\Midterm1KitchenObjects\bin\Debug\netcoreapp3.1\Midterm1KitchenObjects.deps.json
+C:\Users\jwyeth\source\repos\Midterm1KitchenObjects\Midterm1KitchenObjects\bin\Debug\netcoreapp3.1\Midterm1KitchenObjects.runtimeconfig.json
+C:\Users\jwyeth\source\repos\Midterm1KitchenObjects\Midterm1KitchenObjects\bin\Debug\netcoreapp3.1\Midterm1KitchenObjects.runtimeconfig.dev.json
+C:\Users\jwyeth\source\repos\Midterm1KitchenObjects\Midterm1KitchenObjects\bin\Debug\netcoreapp3.1\Midterm1KitchenObjects.dll
+C:\Users\jwyeth\source\repos\Midterm1KitchenObjects\Midterm1KitchenObjects\bin\Debug\netcoreapp3.1\Midterm1KitchenObjects.pdb
+C:\Users\jwyeth\source\repos\Midterm1KitchenObjects\Midterm1KitchenObjects\obj\Debug\netcoreapp3.1\Midterm1KitchenObjects.csprojAssemblyReference.cache
+C:\Users\jwyeth\source\repos\Midterm1KitchenObjects\Midterm1KitchenObjects\obj\Debug\netcoreapp3.1\Midterm1KitchenObjects.AssemblyInfoInputs.cache
+C:\Users\jwyeth\source\repos\Midterm1KitchenObjects\Midterm1KitchenObjects\obj\Debug\netcoreapp3.1\Midterm1KitchenObjects.AssemblyInfo.cs
+C:\Users\jwyeth\source\repos\Midterm1KitchenObjects\Midterm1KitchenObjects\obj\Debug\netcoreapp3.1\Midterm1KitchenObjects.csproj.CoreCompileInputs.cache
+C:\Users\jwyeth\source\repos\Midterm1KitchenObjects\Midterm1KitchenObjects\obj\Debug\netcoreapp3.1\Midterm1KitchenObjects.dll
+C:\Users\jwyeth\source\repos\Midterm1KitchenObjects\Midterm1KitchenObjects\obj\Debug\netcoreapp3.1\Midterm1KitchenObjects.pdb
+C:\Users\jwyeth\source\repos\Midterm1KitchenObjects\Midterm1KitchenObjects\obj\Debug\netcoreapp3.1\Midterm1KitchenObjects.genruntimeconfig.cache
