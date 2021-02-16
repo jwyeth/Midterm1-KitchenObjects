@@ -32,5 +32,14 @@ namespace Midterm1KitchenObjects
         {
             Console.WriteLine($"{Name}, {TotalCalories}, {TotalCost}");
         }
+
+        public int CalculateTotalCalories(Recipe selectedRecipe, Ingredients List<Ingredients> )
+        {
+            foreach (string i in selectedRecipe.Ingredients){
+                Foods.
+            }
+
+            
+        }
     }
 }

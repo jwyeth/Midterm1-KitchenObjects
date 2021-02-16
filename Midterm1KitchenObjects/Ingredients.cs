@@ -11,8 +11,6 @@ namespace Midterm1KitchenObjects
         public int Calories { get; set; }
         public double Cost { get; set; }
 
-        
-
         public Ingredients(string Name, string FoodGroup, int Calories, double Cost)
         {
             this.Name = Name;
